@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB4BB89C2122301500FFAD29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4BB89B2122301500FFAD29 /* AppDelegate.swift */; };
+		FB4BB8A12122301500FFAD29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4BB89F2122301500FFAD29 /* Main.storyboard */; };
+		FB4BB8A32122301900FFAD29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4BB8A22122301900FFAD29 /* Assets.xcassets */; };
+		FB4BB8A62122301900FFAD29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4BB8A42122301900FFAD29 /* LaunchScreen.storyboard */; };
+		FB4BB8B12122301900FFAD29 /* SweedBankAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4BB8B02122301900FFAD29 /* SweedBankAppTests.swift */; };
+		FB4BB8BD2122434500FFAD29 /* RegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4BB8BC2122434500FFAD29 /* RegionTableViewCell.swift */; };
+		FB4BB8C22122496B00FFAD29 /* RegionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4BB8C12122496B00FFAD29 /* RegionsViewController.swift */; };
+		FB4BB8C4212249AE00FFAD29 /* RegionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4BB8C3212249AE00FFAD29 /* RegionsDataSource.swift */; };
+		FB4BB8C721224AAE00FFAD29 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4BB8C621224AAE00FFAD29 /* Constants.swift */; };
+		FBBCA5462124A47B00D08771 /* LocationInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA5452124A47B00D08771 /* LocationInfoTableViewCell.swift */; };
+		FBBCA5482124C17E00D08771 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA5472124C17E00D08771 /* Region.swift */; };
+		FBBCA54A2124C3F500D08771 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA5492124C3F500D08771 /* TestData.swift */; };
+		FBBCA54D21273D2300D08771 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA54C21273D2300D08771 /* RestManager.swift */; };
+		FBC6CB752123228F00262C0B /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6CB742123228F00262C0B /* LocationsViewController.swift */; };
+		FBC6CB772123230C00262C0B /* LocationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6CB762123230C00262C0B /* LocationsDataSource.swift */; };
+		FBC6CB792123238500262C0B /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6CB782123238500262C0B /* LocationTableViewCell.swift */; };
+		FBC6CB7B212323F200262C0B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6CB7A212323F200262C0B /* Location.swift */; };
+		FBC6CB7F2123801200262C0B /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6CB7E2123801200262C0B /* LocationTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB4BB8AD2122301900FFAD29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB4BB8902122301500FFAD29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB4BB8972122301500FFAD29;
+			remoteInfo = SweedBankApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB4BB8982122301500FFAD29 /* SweedBankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SweedBankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4BB89B2122301500FFAD29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB4BB8A02122301500FFAD29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB4BB8A22122301900FFAD29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB4BB8A52122301900FFAD29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB4BB8A72122301900FFAD29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB4BB8AC2122301900FFAD29 /* SweedBankAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SweedBankAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4BB8B02122301900FFAD29 /* SweedBankAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweedBankAppTests.swift; sourceTree = "<group>"; };
+		FB4BB8B22122301900FFAD29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB4BB8BC2122434500FFAD29 /* RegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTableViewCell.swift; sourceTree = "<group>"; };
+		FB4BB8C12122496B00FFAD29 /* RegionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsViewController.swift; sourceTree = "<group>"; };
+		FB4BB8C3212249AE00FFAD29 /* RegionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsDataSource.swift; sourceTree = "<group>"; };
+		FB4BB8C621224AAE00FFAD29 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FBBCA5452124A47B00D08771 /* LocationInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoTableViewCell.swift; sourceTree = "<group>"; };
+		FBBCA5472124C17E00D08771 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		FBBCA5492124C3F500D08771 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		FBBCA54C21273D2300D08771 /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		FBC6CB742123228F00262C0B /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		FBC6CB762123230C00262C0B /* LocationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataSource.swift; sourceTree = "<group>"; };
+		FBC6CB782123238500262C0B /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		FBC6CB7A212323F200262C0B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FBC6CB7E2123801200262C0B /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB4BB8952122301500FFAD29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4BB8A92122301900FFAD29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB4BB88F2122301500FFAD29 = {
+			isa = PBXGroup;
+			children = (
+				FB4BB89A2122301500FFAD29 /* SweedBankApp */,
+				FB4BB8AF2122301900FFAD29 /* SweedBankAppTests */,
+				FB4BB8992122301500FFAD29 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB4BB8992122301500FFAD29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB4BB8982122301500FFAD29 /* SweedBankApp.app */,
+				FB4BB8AC2122301900FFAD29 /* SweedBankAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB4BB89A2122301500FFAD29 /* SweedBankApp */ = {
+			isa = PBXGroup;
+			children = (
+				FBBCA5492124C3F500D08771 /* TestData.swift */,
+				FBBCA54B21273A9700D08771 /* REST */,
+				FB4BB8C521224AA300FFAD29 /* Utilities */,
+				FB4BB8C02122494E00FFAD29 /* View Controllers */,
+				FB4BB8BF212248B700FFAD29 /* Data Sources */,
+				FB4BB8BE2122438700FFAD29 /* Entities */,
+				FB4BB8BB2122330100FFAD29 /* Cells */,
+				FB4BB89B2122301500FFAD29 /* AppDelegate.swift */,
+				FB4BB89F2122301500FFAD29 /* Main.storyboard */,
+				FB4BB8A22122301900FFAD29 /* Assets.xcassets */,
+				FB4BB8A42122301900FFAD29 /* LaunchScreen.storyboard */,
+				FB4BB8A72122301900FFAD29 /* Info.plist */,
+			);
+			path = SweedBankApp;
+			sourceTree = "<group>";
+		};
+		FB4BB8AF2122301900FFAD29 /* SweedBankAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB4BB8B02122301900FFAD29 /* SweedBankAppTests.swift */,
+				FB4BB8B22122301900FFAD29 /* Info.plist */,
+			);
+			path = SweedBankAppTests;
+			sourceTree = "<group>";
+		};
+		FB4BB8BB2122330100FFAD29 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FB4BB8BC2122434500FFAD29 /* RegionTableViewCell.swift */,
+				FBC6CB782123238500262C0B /* LocationTableViewCell.swift */,
+				FBBCA5452124A47B00D08771 /* LocationInfoTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FB4BB8BE2122438700FFAD29 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FBC6CB7A212323F200262C0B /* Location.swift */,
+				FBBCA5472124C17E00D08771 /* Region.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FB4BB8BF212248B700FFAD29 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FB4BB8C3212249AE00FFAD29 /* RegionsDataSource.swift */,
+				FBC6CB762123230C00262C0B /* LocationsDataSource.swift */,
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
+		FB4BB8C02122494E00FFAD29 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB4BB8C12122496B00FFAD29 /* RegionsViewController.swift */,
+				FBC6CB742123228F00262C0B /* LocationsViewController.swift */,
+				FBC6CB7E2123801200262C0B /* LocationTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FB4BB8C521224AA300FFAD29 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FB4BB8C621224AAE00FFAD29 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FBBCA54B21273A9700D08771 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				FBBCA54C21273D2300D08771 /* RestManager.swift */,
+			);
+			path = REST;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB4BB8972122301500FFAD29 /* SweedBankApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB4BB8B52122301900FFAD29 /* Build configuration list for PBXNativeTarget "SweedBankApp" */;
+			buildPhases = (
+				FB4BB8942122301500FFAD29 /* Sources */,
+				FB4BB8952122301500FFAD29 /* Frameworks */,
+				FB4BB8962122301500FFAD29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SweedBankApp;
+			productName = SweedBankApp;
+			productReference = FB4BB8982122301500FFAD29 /* SweedBankApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB4BB8AB2122301900FFAD29 /* SweedBankAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB4BB8B82122301900FFAD29 /* Build configuration list for PBXNativeTarget "SweedBankAppTests" */;
+			buildPhases = (
+				FB4BB8A82122301900FFAD29 /* Sources */,
+				FB4BB8A92122301900FFAD29 /* Frameworks */,
+				FB4BB8AA2122301900FFAD29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB4BB8AE2122301900FFAD29 /* PBXTargetDependency */,
+			);
+			name = SweedBankAppTests;
+			productName = SweedBankAppTests;
+			productReference = FB4BB8AC2122301900FFAD29 /* SweedBankAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB4BB8902122301500FFAD29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = andresgerace;
+				TargetAttributes = {
+					FB4BB8972122301500FFAD29 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					FB4BB8AB2122301900FFAD29 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = FB4BB8972122301500FFAD29;
+					};
+				};
+			};
+			buildConfigurationList = FB4BB8932122301500FFAD29 /* Build configuration list for PBXProject "SweedBankApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB4BB88F2122301500FFAD29;
+			productRefGroup = FB4BB8992122301500FFAD29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB4BB8972122301500FFAD29 /* SweedBankApp */,
+				FB4BB8AB2122301900FFAD29 /* SweedBankAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB4BB8962122301500FFAD29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4BB8A62122301900FFAD29 /* LaunchScreen.storyboard in Resources */,
+				FB4BB8A32122301900FFAD29 /* Assets.xcassets in Resources */,
+				FB4BB8A12122301500FFAD29 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4BB8AA2122301900FFAD29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB4BB8942122301500FFAD29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC6CB752123228F00262C0B /* LocationsViewController.swift in Sources */,
+				FBC6CB7B212323F200262C0B /* Location.swift in Sources */,
+				FBBCA5462124A47B00D08771 /* LocationInfoTableViewCell.swift in Sources */,
+				FBBCA54D21273D2300D08771 /* RestManager.swift in Sources */,
+				FBBCA5482124C17E00D08771 /* Region.swift in Sources */,
+				FBBCA54A2124C3F500D08771 /* TestData.swift in Sources */,
+				FB4BB8BD2122434500FFAD29 /* RegionTableViewCell.swift in Sources */,
+				FB4BB8C22122496B00FFAD29 /* RegionsViewController.swift in Sources */,
+				FB4BB8C4212249AE00FFAD29 /* RegionsDataSource.swift in Sources */,
+				FBC6CB772123230C00262C0B /* LocationsDataSource.swift in Sources */,
+				FBC6CB792123238500262C0B /* LocationTableViewCell.swift in Sources */,
+				FBC6CB7F2123801200262C0B /* LocationTableViewController.swift in Sources */,
+				FB4BB89C2122301500FFAD29 /* AppDelegate.swift in Sources */,
+				FB4BB8C721224AAE00FFAD29 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4BB8A82122301900FFAD29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4BB8B12122301900FFAD29 /* SweedBankAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB4BB8AE2122301900FFAD29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB4BB8972122301500FFAD29 /* SweedBankApp */;
+			targetProxy = FB4BB8AD2122301900FFAD29 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB4BB89F2122301500FFAD29 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4BB8A02122301500FFAD29 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB4BB8A42122301900FFAD29 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4BB8A52122301900FFAD29 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB4BB8B32122301900FFAD29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB4BB8B42122301900FFAD29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB4BB8B62122301900FFAD29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SweedBankApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = agerace.SweedBankApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB4BB8B72122301900FFAD29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SweedBankApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = agerace.SweedBankApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FB4BB8B92122301900FFAD29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SweedBankAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = agerace.SweedBankAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SweedBankApp.app/SweedBankApp";
+			};
+			name = Debug;
+		};
+		FB4BB8BA2122301900FFAD29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SweedBankAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = agerace.SweedBankAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SweedBankApp.app/SweedBankApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB4BB8932122301500FFAD29 /* Build configuration list for PBXProject "SweedBankApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4BB8B32122301900FFAD29 /* Debug */,
+				FB4BB8B42122301900FFAD29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB4BB8B52122301900FFAD29 /* Build configuration list for PBXNativeTarget "SweedBankApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4BB8B62122301900FFAD29 /* Debug */,
+				FB4BB8B72122301900FFAD29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB4BB8B82122301900FFAD29 /* Build configuration list for PBXNativeTarget "SweedBankAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4BB8B92122301900FFAD29 /* Debug */,
+				FB4BB8BA2122301900FFAD29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB4BB8902122301500FFAD29 /* Project object */;
+}
