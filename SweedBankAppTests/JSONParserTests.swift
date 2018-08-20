@@ -11,11 +11,11 @@ import XCTest
 @testable import SweedBankApp
 
 class JSONParserTests: XCTestCase {
-
+    
     var sut: JSONParser!
     
     override func setUp() {
-        self.sut = JSONParser.default
+        self.sut = JSONParser.defaultParser
         super.setUp()
     }
     
@@ -25,19 +25,19 @@ class JSONParserTests: XCTestCase {
     
     func testSuccessJSONParsing() {
         let testDictionary: [String:Any]  = ["t": 0,
-                           "n": "test location",
-                           "a": "test address 123",
-                           "av": "12-24",
-                           "r": "test region",
-                           "lat": 58.85076667,
-                           "lon": 26.91277778]
+                                             "n": "test location",
+                                             "a": "test address 123",
+                                             "av": "12-24",
+                                             "r": "test region",
+                                             "lat": 58.85076667,
+                                             "lon": 26.91277778]
         
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: [testDictionary], options: JSONSerialization.WritingOptions.prettyPrinted)
             
-            let locations = sut.locationsFromData(jsonData)
+            let locations = try sut.locationsFromData(jsonData)
             
-            guard let testLocation = locations?.first else {
+            guard let testLocation = locations.first else {
                 XCTFail()
                 return
             }
@@ -65,9 +65,9 @@ class JSONParserTests: XCTestCase {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: [testDictionary], options: JSONSerialization.WritingOptions.prettyPrinted)
             
-            let locations = sut.locationsFromData(jsonData)
+            let locations = try sut.locationsFromData(jsonData)
             
-            guard let testLocation = locations?.first else {
+            guard let testLocation = locations.first else {
                 XCTFail()
                 return
             }
@@ -89,19 +89,16 @@ class JSONParserTests: XCTestCase {
     
     func testFailJSONParsingWithMissingRegion() {
         let testDictionary: [String:Any] = ["t": 0,
-                           "n": "test location",
-                           "a": "test address 123",
-                           "av": "12-24",
-                           "lat": 58.85076667,
-                           "lon": 26.91277778]
+                                            "n": "test location",
+                                            "a": "test address 123",
+                                            "av": "12-24",
+                                            "lat": 58.85076667,
+                                            "lon": 26.91277778]
         
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: [testDictionary], options: JSONSerialization.WritingOptions.prettyPrinted)
             
-            guard let locations = JSONParser.locationsFromData(jsonData) else {
-                XCTFail()
-                return
-            }
+            let locations = try sut.locationsFromData(jsonData)
             
             XCTAssert(locations.count == 0)
             
@@ -109,9 +106,12 @@ class JSONParserTests: XCTestCase {
     }
     
     func testFailJSONParsingWithNilData() {
-        let locations = JSONParser.locationsFromData(nil)
+        do {
+            try sut.locationsFromData(nil)
+            
+            XCTFail()
+        }catch { XCTAssert(true) }
         
-        XCTAssertNil(locations)
     }
     
 }
