@@ -40,6 +40,9 @@
                                             <variation key="heightClass=compact-widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -94,6 +97,12 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.078431372550000003" green="0.41568627450000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -146,6 +155,9 @@
                                                     <variation key="heightClass=compact-widthClass=compact">
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWj-dm-WAT">
                                                     <rect key="frame" x="0.0" y="11.333333333333336" width="311" height="21"/>
@@ -158,6 +170,9 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=compact-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     </variation>
                                                 </label>
@@ -235,6 +250,9 @@
                                             <variation key="heightClass=compact-widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                             </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGb-q6-WqH">
                                             <rect key="frame" x="180" y="15" width="209" height="13.666666666666664"/>
@@ -242,6 +260,9 @@
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=compact-widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             </variation>
                                         </label>
