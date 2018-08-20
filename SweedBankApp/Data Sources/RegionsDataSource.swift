@@ -8,26 +8,30 @@
 
 import UIKit
 
-class RegionsDataSource: NSObject, UITableViewDataSource {
+class CountriesDataSource: NSObject, UITableViewDataSource {
     
-    let regions: [Region]
+    let countries: [Country]
     
-    init(regions: [Region]) {
-        self.regions = regions
+    init(countries: [Country]) {
+        self.countries = countries
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.regions.count
+        return self.countries[section].regions.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.countries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.RegionCellIdentifier) as! RegionTableViewCell
-        cell.regionName = self.regions[indexPath.row].name
+        cell.regionName = self.countries[indexPath.section].regions[indexPath.row].name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.countries[section].name
     }
     
 }

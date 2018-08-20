@@ -11,14 +11,14 @@ import UIKit
 class RegionsViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var regionsTableView: UITableView!
     
-    var regionsDataSource = RegionsDataSource(regions: [Region]())
+    var countriesDataSource = CountriesDataSource(countries: [Country]())
     
-    var regions = [Region]()
+    var countries = [Country]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
-        self.loadRegions()
+        self.loadCountries()
     }
     
     private func setupTableView() {
@@ -27,37 +27,67 @@ class RegionsViewController: UIViewController, UITableViewDelegate {
         self.regionsTableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    private func loadRegions() {
-        let manager = RestManager()
-        let url = URL(string: "https://ib.swedbank.lt/finder.json")
-        manager.get(url: url!) { (data, response) in
-            do {
-
-                let jsonObject = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-                
-                guard let arrayFromJSON = jsonObject as? [[String:Any]] else {
-                    return
-                    // 
-                }
-                
-                let locations = arrayFromJSON.map{Location(locationDictionary: $0)}
-                    .sorted{ $0.name < $1.name }
-                
-                let sortedLocations = Dictionary(grouping: locations, by: { $0.region })
-                self.regions = sortedLocations.map{ Region(name: $0.0, locations: $0.1) }
-                    .sorted{ $0.name < $1.name }
-                DispatchQueue.main.async {
-                    self.showRegions(self.regions)
-                }
-            }catch let jsonError {
-                print (jsonError)
+    private func loadCountries() {
+        self.loadLocalCountries()
+        self.loadServerCountries()
+    }
+    
+    private func loadLocalCountries() {
+        Constants.CountriesInfo.forEach {
+            guard let countryName = $0["country"] else { return }
+            self.retrieveLocalRegionsForCountry(countryName: countryName)
+        }
+    }
+    
+    private func loadServerCountries () {
+        let manager = RestManager(session: URLSession(configuration: .default))
+        Constants.CountriesInfo.forEach {
+            guard let countryName = $0["country"],
+                let countryUrl = $0["url"] else { return }
+            self.retrieveServerRegions(forCountry: countryName, url: countryUrl, restManager: manager)
+        }
+    }
+    
+    private func retrieveServerRegions(forCountry countryName: String, url countryUrl: String, restManager manager: RestManager) {
+        
+        guard let url = URL(string: countryUrl) else { return }
+        
+        manager.get(url: url, httpMethod: "GET") { (data, response, error) in
+            guard let locations = JSONParser.locationsFromData(data) else {
+                print ("Error parsing retrieved data for \(url.absoluteString)")
+                return
+            }
+            
+            let sortedLocations = locations.sorted{ $0.name < $1.name }
+            LocalDataManager().write(sortedLocations, onFile: countryName)
+            let groupedLocations = Dictionary(grouping: sortedLocations, by: { $0.region })
+            
+            let regions = groupedLocations.map{ Region(name: $0.0, locations: $0.1) }
+                .sorted{ $0.name < $1.name }
+            self.countries = self.countries.filter{ $0.name != countryName }
+            self.countries.append(Country(name: countryName, regions: regions))
+            
+            DispatchQueue.main.async {
+                self.showCountries(self.countries)
             }
         }
     }
     
-    private func showRegions(_ regions: [Region] ) {
-        self.regionsDataSource = RegionsDataSource(regions: regions)
-        self.regionsTableView.dataSource = self.regionsDataSource
+    private func retrieveLocalRegionsForCountry(countryName: String) {
+        if let sortedLocations = LocalDataManager().read(file: countryName) {
+            let groupedLocations = Dictionary(grouping: sortedLocations, by: { $0.region })
+            
+            let regions = groupedLocations.map{ Region(name: $0.0, locations: $0.1) }
+                .sorted{ $0.name < $1.name }
+            
+            self.countries.append(Country(name: countryName, regions: regions))
+            self.showCountries(self.countries)
+        }
+    }
+    
+    private func showCountries(_ countries: [Country] ) {
+        self.countriesDataSource = CountriesDataSource(countries: countries)
+        self.regionsTableView.dataSource = self.countriesDataSource
         self.regionsTableView.reloadData()
     }
 
@@ -65,7 +95,7 @@ class RegionsViewController: UIViewController, UITableViewDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "LocationsViewController") as! LocationsViewController
-        viewController.locations = self.regions[indexPath.row].locations
+        viewController.locations = self.countries[indexPath.section].regions[indexPath.row].locations
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

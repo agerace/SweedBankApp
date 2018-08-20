@@ -25,18 +25,21 @@ class Location {
     var hasNoCash: (Bool, String)? = nil
     var hasCoinStation: (Bool, String)? = nil
     
-    init (locationDictionary:[String:Any]){
+    init? (locationDictionary:[String:Any]){
         
-        if let region = locationDictionary["r"] as? String {
-            self.region = region
-        }else {
-            self.region = "Not specified"
-        }
+        guard let region = locationDictionary["r"] as? String else { return nil }
+        self.region = region
         
-        self.name = locationDictionary["n"] as! String
-        self.address = locationDictionary["a"] as! String
         
-        switch locationDictionary["t"] as! Int  {
+        guard let name = locationDictionary["n"] as? String else { return nil }
+        self.name = name
+        
+        guard let address = locationDictionary["a"] as? String else { return nil }
+        self.address = address
+        
+        guard let locationType = locationDictionary["t"] as? Int else { return nil }
+        
+        switch locationType {
         case 0:
             self.type = .location
         case 1:

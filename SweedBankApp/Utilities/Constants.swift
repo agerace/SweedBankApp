@@ -13,4 +13,7 @@ struct Constants {
     static let RegionCellIdentifier = "RegionTableViewCellIdentifier"
     static let LocationCellIdentifier = "LocationTableViewCellIdentifier"
     static let LocationInfoCellIdentifier = "LocationInfoTableViewCellIdentiffier"
+    static let CountriesInfo = [["country":"Estonia", "url":"https://www.swedbank.ee/finder.json"],
+                                ["country":"Latvia", "url":"https://ib.swedbank.lv/finder.json"],
+                                ["country":"Lithuania", "url":"https://ib.swedbank.lt/finder.json"]]
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB3F25D1212884C400F9ABDD /* RestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F25D0212884C400F9ABDD /* RestManagerTests.swift */; };
+		FB3F25DD2128B49A00F9ABDD /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F25DC2128B49A00F9ABDD /* LocalDataManager.swift */; };
+		FB3F25DF2129EF1800F9ABDD /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F25DE2129EF1800F9ABDD /* Country.swift */; };
 		FB4BB89C2122301500FFAD29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4BB89B2122301500FFAD29 /* AppDelegate.swift */; };
 		FB4BB8A12122301500FFAD29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4BB89F2122301500FFAD29 /* Main.storyboard */; };
 		FB4BB8A32122301900FFAD29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4BB8A22122301900FFAD29 /* Assets.xcassets */; };
@@ -18,8 +21,9 @@
 		FB4BB8C721224AAE00FFAD29 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4BB8C621224AAE00FFAD29 /* Constants.swift */; };
 		FBBCA5462124A47B00D08771 /* LocationInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA5452124A47B00D08771 /* LocationInfoTableViewCell.swift */; };
 		FBBCA5482124C17E00D08771 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA5472124C17E00D08771 /* Region.swift */; };
-		FBBCA54A2124C3F500D08771 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA5492124C3F500D08771 /* TestData.swift */; };
 		FBBCA54D21273D2300D08771 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA54C21273D2300D08771 /* RestManager.swift */; };
+		FBBCA54F21276FB000D08771 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA54E21276FB000D08771 /* JSONParser.swift */; };
+		FBBCA5512127710A00D08771 /* JSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA5502127710A00D08771 /* JSONParserTests.swift */; };
 		FBC6CB752123228F00262C0B /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6CB742123228F00262C0B /* LocationsViewController.swift */; };
 		FBC6CB772123230C00262C0B /* LocationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6CB762123230C00262C0B /* LocationsDataSource.swift */; };
 		FBC6CB792123238500262C0B /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6CB782123238500262C0B /* LocationTableViewCell.swift */; };
@@ -38,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB3F25D0212884C400F9ABDD /* RestManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManagerTests.swift; sourceTree = "<group>"; };
+		FB3F25DC2128B49A00F9ABDD /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		FB3F25DE2129EF1800F9ABDD /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		FB4BB8982122301500FFAD29 /* SweedBankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SweedBankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4BB89B2122301500FFAD29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB4BB8A02122301500FFAD29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,8 +60,9 @@
 		FB4BB8C621224AAE00FFAD29 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBBCA5452124A47B00D08771 /* LocationInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoTableViewCell.swift; sourceTree = "<group>"; };
 		FBBCA5472124C17E00D08771 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
-		FBBCA5492124C3F500D08771 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		FBBCA54C21273D2300D08771 /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		FBBCA54E21276FB000D08771 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		FBBCA5502127710A00D08771 /* JSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserTests.swift; sourceTree = "<group>"; };
 		FBC6CB742123228F00262C0B /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		FBC6CB762123230C00262C0B /* LocationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataSource.swift; sourceTree = "<group>"; };
 		FBC6CB782123238500262C0B /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
@@ -80,6 +88,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB3F25D221288A3200F9ABDD /* Mockups */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mockups;
+			sourceTree = "<group>";
+		};
 		FB4BB88F2122301500FFAD29 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +116,6 @@
 		FB4BB89A2122301500FFAD29 /* SweedBankApp */ = {
 			isa = PBXGroup;
 			children = (
-				FBBCA5492124C3F500D08771 /* TestData.swift */,
 				FBBCA54B21273A9700D08771 /* REST */,
 				FB4BB8C521224AA300FFAD29 /* Utilities */,
 				FB4BB8C02122494E00FFAD29 /* View Controllers */,
@@ -120,7 +134,10 @@
 		FB4BB8AF2122301900FFAD29 /* SweedBankAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				FB3F25D221288A3200F9ABDD /* Mockups */,
 				FB4BB8B02122301900FFAD29 /* SweedBankAppTests.swift */,
+				FBBCA5502127710A00D08771 /* JSONParserTests.swift */,
+				FB3F25D0212884C400F9ABDD /* RestManagerTests.swift */,
 				FB4BB8B22122301900FFAD29 /* Info.plist */,
 			);
 			path = SweedBankAppTests;
@@ -141,6 +158,7 @@
 			children = (
 				FBC6CB7A212323F200262C0B /* Location.swift */,
 				FBBCA5472124C17E00D08771 /* Region.swift */,
+				FB3F25DE2129EF1800F9ABDD /* Country.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -168,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				FB4BB8C621224AAE00FFAD29 /* Constants.swift */,
+				FBBCA54E21276FB000D08771 /* JSONParser.swift */,
+				FB3F25DC2128B49A00F9ABDD /* LocalDataManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -282,16 +302,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBC6CB752123228F00262C0B /* LocationsViewController.swift in Sources */,
+				FB3F25DD2128B49A00F9ABDD /* LocalDataManager.swift in Sources */,
 				FBC6CB7B212323F200262C0B /* Location.swift in Sources */,
 				FBBCA5462124A47B00D08771 /* LocationInfoTableViewCell.swift in Sources */,
 				FBBCA54D21273D2300D08771 /* RestManager.swift in Sources */,
 				FBBCA5482124C17E00D08771 /* Region.swift in Sources */,
-				FBBCA54A2124C3F500D08771 /* TestData.swift in Sources */,
 				FB4BB8BD2122434500FFAD29 /* RegionTableViewCell.swift in Sources */,
 				FB4BB8C22122496B00FFAD29 /* RegionsViewController.swift in Sources */,
 				FB4BB8C4212249AE00FFAD29 /* RegionsDataSource.swift in Sources */,
 				FBC6CB772123230C00262C0B /* LocationsDataSource.swift in Sources */,
+				FBBCA54F21276FB000D08771 /* JSONParser.swift in Sources */,
 				FBC6CB792123238500262C0B /* LocationTableViewCell.swift in Sources */,
+				FB3F25DF2129EF1800F9ABDD /* Country.swift in Sources */,
 				FBC6CB7F2123801200262C0B /* LocationTableViewController.swift in Sources */,
 				FB4BB89C2122301500FFAD29 /* AppDelegate.swift in Sources */,
 				FB4BB8C721224AAE00FFAD29 /* Constants.swift in Sources */,
@@ -302,7 +324,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBCA5512127710A00D08771 /* JSONParserTests.swift in Sources */,
 				FB4BB8B12122301900FFAD29 /* SweedBankAppTests.swift in Sources */,
+				FB3F25D1212884C400F9ABDD /* RestManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
