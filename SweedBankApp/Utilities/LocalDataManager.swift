@@ -10,26 +10,27 @@ import Foundation
 
 class LocalDataManager {
     
-    func write(_ countryLocations: [Location], onFile fileName: String) {
+    enum LocalError: Error {
+        case readError
+        case writeError
+    }
+    
+    func write(_ countryLocations: [Location], onFile fileName: String) throws {
 
-        guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { throw LocalError.writeError }
         let fileUrl = documentDirectoryUrl.appendingPathComponent("\(fileName).json")
         
-        do {
             let data = try JSONSerialization.data(withJSONObject: countryLocations.compactMap{$0.dictionaryRepresentation()}, options: [])
             try data.write(to: fileUrl, options: [])
-        } catch { return }
         
     }
     
-    func read(file fileName:String) -> [Location]? {
-        guard let documentsDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+    func read(file fileName:String) throws -> [Location] {
+        guard let documentsDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { throw LocalError.readError  }
         let fileUrl = documentsDirectoryUrl.appendingPathComponent("\(fileName).json")
         
-        do {
             let data = try Data(contentsOf: fileUrl, options: [])
-            return JSONParser.locationsFromData(data)
-        } catch { return nil }
+            return try JSONParser.defaultParser.locationsFromData(data)
     }
     
 }

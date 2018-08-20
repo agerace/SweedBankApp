@@ -25,7 +25,7 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.RegionCellIdentifier) as! RegionTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.RegionCellIdentifier) as! RegionTableViewCell
         cell.regionName = self.countries[indexPath.section].regions[indexPath.row].name
         return cell
     }

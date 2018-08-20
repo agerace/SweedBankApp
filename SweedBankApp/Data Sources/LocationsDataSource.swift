@@ -20,14 +20,9 @@ class LocationsDataSource: NSObject, UITableViewDataSource {
         return self.locations.count
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.LocationCellIdentifier) as! LocationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.LocationCellIdentifier) as! LocationTableViewCell
         cell.location = self.locations[indexPath.row]
-//        cell.locationName = self.locations[indexPath.row]
         return cell
     }
     

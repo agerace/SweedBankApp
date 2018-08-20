@@ -10,6 +10,8 @@ import Foundation
 
 class RestManager {
     
+    static let manager = RestManager(session: URLSession(configuration: .default))
+    
     typealias completeClosure = ( _ data: Data?, _ urlResponse: URLResponse?,  _ error: Error?)->Void
     private let session: URLSession
     
@@ -17,13 +19,13 @@ class RestManager {
         self.session = session
     }
     
-    func get(url: URL, httpMethod: String, callback: @escaping completeClosure ) {
+    func request(url: URL, httpMethod: String, callback: @escaping completeClosure ) {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.cachePolicy = .reloadIgnoringCacheData
         
-        self.addCookies(cookiesDictionary: ["Set-Cookie": "\(Constants.CookieName)=\(Constants.CookieValue)"], toUrl: url)
+        self.addCookies(cookiesDictionary: ["Set-Cookie": "\(Constants.Cookies.CookieName)=\(Constants.Cookies.CookieValue)"], to: url)
         
         let task = self.session.dataTask(with: request, completionHandler: {(data, response, error) in
             callback(data, response, error)
@@ -33,7 +35,7 @@ class RestManager {
         task.resume()
     }
     
-    private func addCookies(cookiesDictionary: [String:String], toUrl url: URL) {
+    private func addCookies(cookiesDictionary: [String:String], to url: URL) {
         let jar = HTTPCookieStorage.shared
         let cookieHeaderField = cookiesDictionary
         let cookies = HTTPCookie.cookies(withResponseHeaderFields: cookieHeaderField, for: url)

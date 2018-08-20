@@ -37,48 +37,32 @@ class RegionsTableViewController: UITableViewController {
     }
     
     private func loadLocalCountries() {
-        Constants.CountriesInfo.forEach {
-            guard let countryName = $0["country"] else { return }
-            self.retrieveLocalRegionsForCountry(countryName: countryName)
+        Constants.Countries.sources.forEach {
+            self.retrieveLocalRegionsForCountry(countryName: $0.name)
         }
     }
     
     @objc private func loadServerCountries () {
         
-        let manager = RestManager(session: URLSession(configuration: .default))
-        Constants.CountriesInfo.forEach {
-            guard let countryName = $0["country"],
-                let countryUrl = $0["url"] else { return }
-            self.retrieveServerRegions(forCountry: countryName, url: countryUrl, restManager: manager)
-        }
-    }
-    
-    private func retrieveServerRegions(forCountry countryName: String, url countryUrl: String, restManager manager: RestManager) {
-        
-        guard let url = URL(string: countryUrl) else { return }
-        
-        manager.get(url: url, httpMethod: "GET") { (data, response, error) in
-            guard let locations = JSONParser.locationsFromData(data) else {
-                print ("Error parsing retrieved data for \(url.absoluteString)")
-                return
-            }
-            let sortedLocations = locations.sorted{ $0.name < $1.name }
-            LocalDataManager().write(sortedLocations, onFile: countryName)
-            let groupedLocations = Dictionary(grouping: sortedLocations, by: { $0.region })
-            
-            let regions = groupedLocations.map{ Region(name: $0.0, locations: $0.1) }
-                .sorted{ $0.name < $1.name }
-            self.countries = self.countries.filter{ $0.name != countryName }
-            self.countries.append(Country(name: countryName, regions: regions))
-            self.countries = self.countries.sorted{$0.name < $1.name}
-            DispatchQueue.main.async {
-                self.showCountries(self.countries)
+        Constants.Countries.sources.forEach { sourceCountry in
+            RegionRepository().getRegions(for: sourceCountry) { result in
+                switch result {
+                case let .success(country):
+                    self.countries = self.countries.filter{ $0.name != country.name }
+                    self.countries.append(country)
+                    self.countries = self.countries.sorted{$0.name < $1.name}
+                    DispatchQueue.main.async {
+                        self.showCountries(self.countries)
+                    }
+                case let .error(error):
+                    print(error)
+                }
             }
         }
     }
     
     private func retrieveLocalRegionsForCountry(countryName: String) {
-        if let sortedLocations = LocalDataManager().read(file: countryName) {
+        if let sortedLocations = try? LocalDataManager().read(file: countryName) {
             let groupedLocations = Dictionary(grouping: sortedLocations, by: { $0.region })
             
             let regions = groupedLocations.map{ Region(name: $0.0, locations: $0.1) }

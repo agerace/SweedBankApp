@@ -13,8 +13,9 @@ import XCTest
 class JSONParserTests: XCTestCase {
 
     var sut: JSONParser!
+    
     override func setUp() {
-        self.sut = JSONParser()
+        self.sut = JSONParser.default
         super.setUp()
     }
     
@@ -34,7 +35,7 @@ class JSONParserTests: XCTestCase {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: [testDictionary], options: JSONSerialization.WritingOptions.prettyPrinted)
             
-            let locations = JSONParser.locationsFromData(jsonData)
+            let locations = sut.locationsFromData(jsonData)
             
             guard let testLocation = locations?.first else {
                 XCTFail()
@@ -64,7 +65,7 @@ class JSONParserTests: XCTestCase {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: [testDictionary], options: JSONSerialization.WritingOptions.prettyPrinted)
             
-            let locations = JSONParser.locationsFromData(jsonData)
+            let locations = sut.locationsFromData(jsonData)
             
             guard let testLocation = locations?.first else {
                 XCTFail()

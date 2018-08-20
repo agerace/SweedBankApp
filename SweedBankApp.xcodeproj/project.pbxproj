@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB3F25D1212884C400F9ABDD /* RestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F25D0212884C400F9ABDD /* RestManagerTests.swift */; };
 		FB3F25DD2128B49A00F9ABDD /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F25DC2128B49A00F9ABDD /* LocalDataManager.swift */; };
 		FB3F25DF2129EF1800F9ABDD /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F25DE2129EF1800F9ABDD /* Country.swift */; };
 		FB3F25E1212B2CAC00F9ABDD /* RegionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F25E0212B2CAB00F9ABDD /* RegionsTableViewController.swift */; };
 		FB3F25E3212B2DE600F9ABDD /* LocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F25E2212B2DE600F9ABDD /* LocationsTableViewController.swift */; };
+		FB3F25E5212B541600F9ABDD /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F25E4212B541600F9ABDD /* CountryRepository.swift */; };
 		FB4BB89C2122301500FFAD29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4BB89B2122301500FFAD29 /* AppDelegate.swift */; };
 		FB4BB8A12122301500FFAD29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4BB89F2122301500FFAD29 /* Main.storyboard */; };
 		FB4BB8A32122301900FFAD29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4BB8A22122301900FFAD29 /* Assets.xcassets */; };
@@ -42,11 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FB3F25D0212884C400F9ABDD /* RestManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManagerTests.swift; sourceTree = "<group>"; };
 		FB3F25DC2128B49A00F9ABDD /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		FB3F25DE2129EF1800F9ABDD /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		FB3F25E0212B2CAB00F9ABDD /* RegionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsTableViewController.swift; sourceTree = "<group>"; };
 		FB3F25E2212B2DE600F9ABDD /* LocationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewController.swift; sourceTree = "<group>"; };
+		FB3F25E4212B541600F9ABDD /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
 		FB4BB8982122301500FFAD29 /* SweedBankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SweedBankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4BB89B2122301500FFAD29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB4BB8A02122301500FFAD29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,13 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FB3F25D221288A3200F9ABDD /* Mockups */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mockups;
-			sourceTree = "<group>";
-		};
 		FB4BB88F2122301500FFAD29 = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +127,8 @@
 		FB4BB8AF2122301900FFAD29 /* SweedBankAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				FB3F25D221288A3200F9ABDD /* Mockups */,
 				FB4BB8B02122301900FFAD29 /* SweedBankAppTests.swift */,
 				FBBCA5502127710A00D08771 /* JSONParserTests.swift */,
-				FB3F25D0212884C400F9ABDD /* RestManagerTests.swift */,
 				FB4BB8B22122301900FFAD29 /* Info.plist */,
 			);
 			path = SweedBankAppTests;
@@ -196,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				FBBCA54C21273D2300D08771 /* RestManager.swift */,
+				FB3F25E4212B541600F9ABDD /* CountryRepository.swift */,
 			);
 			path = REST;
 			sourceTree = "<group>";
@@ -303,6 +295,7 @@
 			files = (
 				FB3F25DD2128B49A00F9ABDD /* LocalDataManager.swift in Sources */,
 				FB3F25E3212B2DE600F9ABDD /* LocationsTableViewController.swift in Sources */,
+				FB3F25E5212B541600F9ABDD /* CountryRepository.swift in Sources */,
 				FBC6CB7B212323F200262C0B /* Location.swift in Sources */,
 				FBBCA5462124A47B00D08771 /* LocationInfoTableViewCell.swift in Sources */,
 				FBBCA54D21273D2300D08771 /* RestManager.swift in Sources */,
@@ -326,7 +319,6 @@
 			files = (
 				FBBCA5512127710A00D08771 /* JSONParserTests.swift in Sources */,
 				FB4BB8B12122301900FFAD29 /* SweedBankAppTests.swift in Sources */,
-				FB3F25D1212884C400F9ABDD /* RestManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
