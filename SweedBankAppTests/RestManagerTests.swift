@@ -49,8 +49,15 @@ class RestManagerTests: XCTestCase {
         let url = URL(string: "https://www.swedbank.ee/finder.json")!
         
         sut.get(url: url, httpMethod: "GET", callback: {(data, response, error) in
+            guard let locations = JSONParser.locationsFromData(data) else {
+                print ("Error parsing retrieved data for \(url.absoluteString)")
+                XCTFail()
+                expect.fulfill()
+                return
+            }
             XCTAssertNil(error)
             XCTAssertNotNil(data)
+            XCTAssert(locations.count > 1)
             expect.fulfill()
         })
         waitForExpectations(timeout: 10, handler: { error in
@@ -66,8 +73,16 @@ class RestManagerTests: XCTestCase {
         let url = URL(string: "https://ib.swedbank.lv/finder.json")!
         
         sut.get(url: url, httpMethod: "GET", callback: {(data, response, error) in
+            guard let locations = JSONParser.locationsFromData(data) else {
+                print ("Error parsing retrieved data for \(url.absoluteString)")
+                XCTFail()
+                expect.fulfill()
+                return
+            }
+            
             XCTAssertNil(error)
             XCTAssertNotNil(data)
+            XCTAssert(locations.count > 1)
             expect.fulfill()
         })
         
@@ -84,8 +99,15 @@ class RestManagerTests: XCTestCase {
         let url = URL(string: "https://ib.swedbank.lt/finder.json")!
         
         sut.get(url: url, httpMethod: "GET", callback: {(data, response, error) in
+            guard let locations = JSONParser.locationsFromData(data) else {
+                print ("Error parsing retrieved data for \(url.absoluteString)")
+                XCTFail()
+                expect.fulfill()
+                return
+            }
             XCTAssertNil(error)
             XCTAssertNotNil(data)
+            XCTAssert(locations.count > 1)
             expect.fulfill()
         })
         

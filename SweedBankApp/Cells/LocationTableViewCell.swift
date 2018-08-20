@@ -19,6 +19,7 @@ class LocationTableViewCell: UITableViewCell {
         didSet {
             locationNameLabel.text = location.name
             locationAddressLabel.text = location.address
+            locationTypeColorView.layer.cornerRadius = locationTypeColorView.frame.height / 2.0
             switch location.type {
             case .location:
                 locationTypeLabel.text = "BR"

@@ -20,12 +20,14 @@ class RestManager {
     func get(url: URL, httpMethod: String, callback: @escaping completeClosure ) {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.cachePolicy = .reloadIgnoringCacheData
         
         self.addCookies(cookiesDictionary: ["Set-Cookie": "\(Constants.CookieName)=\(Constants.CookieValue)"], toUrl: url)
         
-        let task = self.session.dataTask(with: url, completionHandler: {(data, response, error) in
+        let task = self.session.dataTask(with: request, completionHandler: {(data, response, error) in
             callback(data, response, error)
+            //In case the Latvia call fails because of redirection, summon The Great Gaita to make everything work again.
         })
     
         task.resume()

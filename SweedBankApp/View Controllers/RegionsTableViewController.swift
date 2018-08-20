@@ -1,15 +1,14 @@
 //
-//  RegionsViewController.swift
+//  RegionsTableViewController.swift
 //  SweedBankApp
 //
-//  Created by andresgerace on 13/8/18.
+//  Created by andresgerace on 20/8/18.
 //  Copyright © 2018 andresgerace. All rights reserved.
 //
 
 import UIKit
 
-class RegionsViewController: UIViewController, UITableViewDelegate {
-    @IBOutlet var regionsTableView: UITableView!
+class RegionsTableViewController: UITableViewController {
     
     var countriesDataSource = CountriesDataSource(countries: [Country]())
     
@@ -19,12 +18,17 @@ class RegionsViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         self.setupTableView()
         self.loadCountries()
+        self.setTimerToReloadCountries()
+    }
+    
+    private func setTimerToReloadCountries() {
+        Timer.scheduledTimer(timeInterval: 3600, target: self, selector: #selector(self.loadServerCountries), userInfo: nil, repeats: true)
     }
     
     private func setupTableView() {
-        self.regionsTableView.delegate = self
-        self.regionsTableView.estimatedRowHeight = 70
-        self.regionsTableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 70
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     private func loadCountries() {
@@ -39,7 +43,8 @@ class RegionsViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    private func loadServerCountries () {
+    @objc private func loadServerCountries () {
+        
         let manager = RestManager(session: URLSession(configuration: .default))
         Constants.CountriesInfo.forEach {
             guard let countryName = $0["country"],
@@ -57,7 +62,6 @@ class RegionsViewController: UIViewController, UITableViewDelegate {
                 print ("Error parsing retrieved data for \(url.absoluteString)")
                 return
             }
-            
             let sortedLocations = locations.sorted{ $0.name < $1.name }
             LocalDataManager().write(sortedLocations, onFile: countryName)
             let groupedLocations = Dictionary(grouping: sortedLocations, by: { $0.region })
@@ -66,7 +70,7 @@ class RegionsViewController: UIViewController, UITableViewDelegate {
                 .sorted{ $0.name < $1.name }
             self.countries = self.countries.filter{ $0.name != countryName }
             self.countries.append(Country(name: countryName, regions: regions))
-            
+            self.countries = self.countries.sorted{$0.name < $1.name}
             DispatchQueue.main.async {
                 self.showCountries(self.countries)
             }
@@ -81,22 +85,26 @@ class RegionsViewController: UIViewController, UITableViewDelegate {
                 .sorted{ $0.name < $1.name }
             
             self.countries.append(Country(name: countryName, regions: regions))
+            self.countries = self.countries.sorted{$0.name < $1.name}
             self.showCountries(self.countries)
         }
     }
     
     private func showCountries(_ countries: [Country] ) {
         self.countriesDataSource = CountriesDataSource(countries: countries)
-        self.regionsTableView.dataSource = self.countriesDataSource
-        self.regionsTableView.reloadData()
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "LocationsViewController") as! LocationsViewController
-        viewController.locations = self.countries[indexPath.section].regions[indexPath.row].locations
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.tableView.dataSource = self.countriesDataSource
+        self.tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "LocationsTableViewController") as! LocationsTableViewController
+        viewController.region = self.countries[indexPath.section].regions[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    @IBAction func refreshLocations(_ sender: UIBarButtonItem) {
+        self.loadServerCountries()
+    }
 }
